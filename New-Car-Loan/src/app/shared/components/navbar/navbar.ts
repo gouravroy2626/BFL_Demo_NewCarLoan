@@ -1,26 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
+  standalone: true,
   imports: [],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
-export class Navbar {
-  private currentRoute: string = '';
+export class Navbar implements OnInit {
+  private currentUrl: string = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.currentUrl = this.router.url;
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event: any) => {
-        this.currentRoute = event.url;
+      .subscribe((event: NavigationEnd) => {
+        this.currentUrl = (event as NavigationEnd).urlAfterRedirects || (event as NavigationEnd).url;
       });
   }
 
   showBackButton(): boolean {
-    return this.currentRoute !== '/' && this.currentRoute !== '';
+    // Hide back button on root and home routes
+    return this.currentUrl !== '/' && this.currentUrl !== '' && this.currentUrl !== '/home';
   }
 
   goBack(): void {
