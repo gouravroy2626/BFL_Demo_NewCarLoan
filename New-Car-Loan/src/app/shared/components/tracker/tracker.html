@@ -1,0 +1,18 @@
+<div class="tracker-container">
+  @for (step of steps; track step; let i = $index) {
+    <div [class]="getStepClass(i)">
+      <div class="circle">
+        @if (currentStep === i) {
+          <span>&#9679;</span>
+        }
+        @if (currentStep !== i) {
+          <span>&#9675;</span>
+        }
+      </div>
+      <div class="label">{{ step }}</div>
+      @if (i < steps.length - 1) {
+        <div class="line"></div>
+      }
+    </div>
+  }
+</div>
