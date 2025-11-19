@@ -1,0 +1,62 @@
+/* Navbar styling */
+.navbar {
+  background-color: #002953 !important; /* Bajaj Finserv blue */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 56px;
+}
+/* Container spacing */
+.container-fluid {
+  padding: 0.5rem 1rem;
+}
+/* Back button styling */
+.back-button {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  margin: 0; 
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button:hover {
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 6px;
+}
+
+/* Brand/Title styling - centered */
+.navbar-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Rubik, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #ffffff !important;
+  margin: 0;
+  pointer-events: none;
+}
+/* Logo inside brand */
+.brand-logo {
+  margin-right: 6px;
+  vertical-align: middle;
+  transform: translateY(-2px);
+}
+/* Spacer to balance layout */
+.spacer {
+  width: 60px;
+  margin-left: auto;
+}

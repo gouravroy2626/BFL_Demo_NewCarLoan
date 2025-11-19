@@ -25,8 +25,12 @@
               }
             ],
             "styles": [
-              "src/styles.css",
-              "src/app/features/vehicle-details/components/vehicle-form/vehicle-form.css"
+              "src/app/features/vehicle-details/components/vehicle-form/vehicle-form.css",
+              "bootswatch/dist/flatly/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
